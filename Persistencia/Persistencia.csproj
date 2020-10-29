@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Persistencia</AssemblyName>
+    <RootNamespace>Persistencia</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201026144734_ArreglosTipo2.cs" />
+    <Compile Remove="Migrations\20201026144734_ArreglosTipo2.Designer.cs" />
+    <Compile Remove="Migrations\20201029142210_Cuentas-Bancos.cs" />
+    <Compile Remove="Migrations\20201029142210_Cuentas-Bancos.Designer.cs" />
+    <Compile Remove="Migrations\20201029143055_Arreglo-Proveedor.cs" />
+    <Compile Remove="Migrations\20201029143055_Arreglo-Proveedor.Designer.cs" />
+    <Compile Remove="Migrations\20201029143307_Arreglo-Proveedor.cs" />
+    <Compile Remove="Migrations\20201029143307_Arreglo-Proveedor.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dominio\Dominio.csproj" />
+  </ItemGroup>
+
+</Project>
