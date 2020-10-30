@@ -33,7 +33,7 @@ namespace Aplicacion.Productos
                 return await _context.Productos.Where(producto => producto.IdProducto == request.Id)
                     .Include(x=> x.Categoria).Include(x=> x.Medida)
                     .Include(x=> x.Proveedor)
-                    .FirstOrDefaultAsync();
+                    .FirstOrDefaultAsync(cancellationToken);
             }
         }
     }

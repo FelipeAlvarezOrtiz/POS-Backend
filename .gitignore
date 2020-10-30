@@ -63,6 +63,7 @@ StyleCopReport.xml
 *_i.c
 *_p.c
 *_h.h
+*.config
 *.ilk
 *.meta
 *.obj
@@ -107,6 +108,7 @@ ipch/
 *.vsp
 *.vspx
 *.sap
+
 
 # Visual Studio Trace Files
 *.e2e

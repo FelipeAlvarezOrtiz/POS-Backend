@@ -3,12 +3,16 @@ using Dominio.Misc;
 using Dominio.Productos;
 using Dominio.Proveedores;
 using Dominio.Tiendas;
+using Dominio.Usuario;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Persistencia
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<AppUser>
     {
+
         public ApplicationDbContext(){}
 
         public ApplicationDbContext(DbContextOptions options) : base(options)
@@ -17,6 +21,7 @@ namespace Persistencia
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            base.OnModelCreating(builder);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
