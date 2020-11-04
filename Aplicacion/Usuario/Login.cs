@@ -54,6 +54,7 @@ namespace Aplicacion.Usuario
                     return new User
                     {
                         DisplayName = user.Nombre,
+                        Email = user.Email,
                         Token = _jwtGenerator.CreateToken(user),
                     };
                 }

@@ -71,7 +71,8 @@ namespace Aplicacion.Productos
             {
                 return await _context.Proveedores.Where(prov => prov.IdProveedor == id)
                     .Include(p => p.Banco)
-                    .Include(p => p.TipoCuenta).Include(p => p.TipoPago)
+                    .Include(p => p.TipoCuenta)
+                    .Include(p => p.TipoPago)
                     .Include(p => p.TipoProveedor)
                     .FirstOrDefaultAsync();
             }

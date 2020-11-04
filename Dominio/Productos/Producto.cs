@@ -1,5 +1,4 @@
 ﻿using System;
-using Dominio.Productos;
 using Dominio.Proveedores;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;

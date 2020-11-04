@@ -26,6 +26,7 @@ namespace Persistencia
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+
             optionsBuilder.UseSqlServer(@"Data Source=161.35.248.76,1433;Initial Catalog=POS;Persist Security Info=True;User ID=sa;Password=AlarakJuegaShakuras199522-");
         }
 
