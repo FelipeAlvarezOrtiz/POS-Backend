@@ -1,5 +1,4 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using Aplicacion.Errores;
@@ -40,14 +39,14 @@ namespace Aplicacion.Usuario
         {
             private readonly ApplicationDbContext _context;
             private readonly UserManager<AppUser> _userManager;
-            private readonly IJwtGenerator _jwetGenerator;
+            private readonly IJwtGenerator _jwtGenerator;
 
             public Handler(ApplicationDbContext context, UserManager<AppUser> userManager,
-                IJwtGenerator jwetGenerator)
+                IJwtGenerator jwtGenerator)
             {
                 _context = context;
                 _userManager = userManager;
-                _jwetGenerator = jwetGenerator;
+                _jwtGenerator = jwtGenerator;
             }
 
             public async Task<User> Handle(Command request, CancellationToken cancellationToken)
@@ -78,11 +77,15 @@ namespace Aplicacion.Usuario
                     {
                         DisplayName = user.Nombre,
                         Email = user.Email,
-                        Token = _jwetGenerator.CreateToken(user),
+                        Token = _jwtGenerator.CreateToken(user),
                     };
                 }
                 
-                throw new RestException(HttpStatusCode.BadRequest,result.Errors.ToString());
+                throw new RestException(HttpStatusCode.BadRequest, 
+                    new
+                    {
+                        Error = "El usuario no se ha podido crear, verifique si cumple las especificaciones para los valores."
+                    });
             }
         }
 
